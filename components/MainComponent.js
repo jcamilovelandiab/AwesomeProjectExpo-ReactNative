@@ -57,7 +57,6 @@ const MainNavigator = createDrawerNavigator({
 });
 
 const MainNavigatorContainer = createAppContainer(MainNavigator);
-const MenuNavigatorContainer = createAppContainer(MenuNavigator);
 
 class Main extends Component{
 
