@@ -1,23 +1,20 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
-import { Card } from "react-native-elements";
+import { View } from "react-native";
 import { DISHES } from "../../shared/dishes";
+import MyCard from '../../components/my-card';
 
 function RenderDish(props) {
     const dish = props.dish;
-    if (dish) {
-        return (
-            <Card>
-                <Card.Title>{dish.name}</Card.Title>
-                <Card.Image
-                    source={require("../../assets/images/uthappizza.png")}
-                />
-                <Text style={{ marginTop: 10 }}>{dish.description}</Text>
-            </Card>
-        );
-    } else {
-        return <View></View>;
-    }
+
+    return (dish) ? (
+        <MyCard 
+            image={require("../../assets/images/uthappizza.png")}
+            title={dish.name}
+            description={dish.description}
+        />
+    ) : (
+        <View></View>
+    );
 }
 
 class DishDetail extends Component {

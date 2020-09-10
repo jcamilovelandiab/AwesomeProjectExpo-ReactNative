@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text } from 'react-native';
-import { Card } from 'react-native-elements';
 import { DISHES } from '../../shared/dishes';
 import { PROMOTIONS } from '../../shared/promotions';
 import { LEADERS } from '../../shared/leaders';
+import MyCard from '../../components/my-card';
 
 function RenderItem(props){
-
     const item = props.item;
-
     if(item!==null){
         return (
-          <Card>
-            <Card.Title>{item.name}</Card.Title>
-            <Card.Image
-              source={require("../../assets/images/uthappizza.png")}
-            />
-            <Text style={{ marginTop: 10 }}>{item.description}</Text>
-          </Card>
+          <MyCard
+            image={require("../../assets/images/uthappizza.png")}
+            title={item.name}
+            description={item.description}
+          />
         );
     }else{
-        return(
-            <View></View>
-        );
+        return <View></View>;
     }
 
 }

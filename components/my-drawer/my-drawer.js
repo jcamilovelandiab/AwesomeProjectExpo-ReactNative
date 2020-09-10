@@ -2,12 +2,12 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from "@react-navigation/native";
 import {
-  createStackNavigator,
-  HeaderBackButton,
+  createStackNavigator
 } from "@react-navigation/stack";
 import Home from '../../pages/home';
 import Menu from '../../pages/menu';
 import DishDetail from '../../pages/dish-details';
+import Contact from '../../pages/contact';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -19,7 +19,7 @@ const MenuNavigator = () => {
           name="Menu"
           component={Menu}
           options={{
-            headerShown: false,
+            title: "Menu",
           }}
         />
         <Stack.Screen
@@ -40,11 +40,17 @@ export default function MyDrawer(){
           <Drawer.Screen
             name="Home"
             component={Home}
-            options={{ drawerLabel: "Home" }}
           />
           <Drawer.Screen
             name="Menu"
             component={MenuNavigator}
+          />
+          <Drawer.Screen
+            name="Contact"
+            component={Contact}
+            options={{
+              title: "Contact"
+            }}
           />
         </Drawer.Navigator>
       </NavigationContainer>
